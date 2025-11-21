@@ -61,7 +61,7 @@ class Cycling extends Workout {
   constructor(coordinates, distance, duration, elevationGain) {
     super(coordinates, distance, duration);
     this.elevationGain = elevationGain;
-    this.#calcSpeed;
+    this.#calcSpeed();
     this.description = this.setDescription();
   }
 
@@ -256,7 +256,7 @@ class App {
           </div>
           <div class="workout__details">
             <span class="workout__icon">⛰</span>
-            <span class="workout__value">${this.elevationGain}</span>
+            <span class="workout__value">${workout.elevationGain}</span>
             <span class="workout__unit">m</span>
           </div>
         </li>`;
