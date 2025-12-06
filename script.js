@@ -106,10 +106,17 @@ class App {
 
     this.#map = L.map('map').setView(coords, 15);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(this.#map);
+    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //   attribution:
+    //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    // }).addTo(this.#map);
+
+    L.tileLayer(
+      'https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}',
+      {
+        attribution: 'Google Maps',
+      }
+    ).addTo(this.#map);
 
     this.#workouts.forEach(work => {
       this.#renderWorkOutMarker(work);
